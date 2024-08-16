@@ -15,7 +15,11 @@ Aplikasi ini pada dasarnya di ciptakan untuk mencari kode dari suatu barang.
   lalu pada bagian input itu sendiri anda bisa memasukan kode.
 
 kode itu berisi data dari barang itu sendiri berupa ``warehouse`` , ``toNumber`` , ``toItem``
-tidak lupa juga untuk anda menambahkan `/` sebagai pemisah antara toNumber dan toItem
+tidak lupa juga untuk anda menambahkan `/` sebagai pemisah antara `toNumber` dan `toItem`
 <br>
 ![Desain warehouse](https://github.com/user-attachments/assets/98cc51d3-4f50-4187-9780-6546393ab8af)
+
+Setelah data yang anda inputkan benar maka otomatis akan masuk ke salah 1 dari 2 halaman di atas.
+
+>Note : Pastikan bahwa anda membuat data pick/confirm dengan default (bawaan) 0 
 
