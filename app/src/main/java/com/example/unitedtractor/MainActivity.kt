@@ -1,11 +1,12 @@
 package com.example.unitedtractor
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.unitedtractor.api.ApiClient
 import com.example.unitedtractor.api.model.TransferResponse
@@ -21,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         // Inisialisasi view
         val submitButton: Button = findViewById(R.id.submit)
         val toFieldInput: EditText = findViewById(R.id.toFieldInput)
-
 
         // Set onClickListener untuk tombol submit
         submitButton.setOnClickListener {
@@ -44,12 +44,8 @@ class MainActivity : AppCompatActivity() {
                                 if (transferData != null) {
                                     when {
                                         transferData.qtyConfirm != null && transferData.qtyConfirm > 0 && transferData.confirm == true -> {
-                                            // Tampilkan AlertDialog jika qtyConfirm lebih dari 0 dan confirm bernilai true
-                                            AlertDialog.Builder(this@MainActivity)
-                                                .setTitle("Informasi")
-                                                .setMessage("TO Number ini sudah dikonfirmasi.")
-                                                .setPositiveButton("OK", null)
-                                                .show()
+                                            // Tampilkan AlertDialog kustom jika qtyConfirm lebih dari 0 dan confirm bernilai true
+                                            showCustomAlertDialog()
                                         }
                                         transferData.qtyPick != null && transferData.qtyPick > 0 && transferData.pick == true -> {
                                             val intent = Intent(this@MainActivity, EditConfirmActivity::class.java)
@@ -83,5 +79,24 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Harap masukkan field yang benar", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun showCustomAlertDialog() {
+        // Inflate layout XML untuk AlertDialog
+        val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_success, null)
+
+        // Buat AlertDialog
+        val alertDialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .create()
+
+        // Temukan Button di dalam layout dan tambahkan action
+        dialogView.findViewById<Button>(R.id.oke).setOnClickListener {
+            // Tutup dialog saat tombol OKE ditekan
+            alertDialog.dismiss()
+        }
+
+        // Tampilkan dialog
+        alertDialog.show()
     }
 }

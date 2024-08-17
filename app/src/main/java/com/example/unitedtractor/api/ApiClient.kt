@@ -7,7 +7,7 @@ import com.example.unitedtractor.api.services.TransferOrder
 
 object ApiClient {
 
-    private const val BASE_URL = "http://192.168.54.176:5000/warehouse-api/api/v1/"
+    private const val BASE_URL = "http://192.168.0.175:5000/warehouse-api/api/v1/"
 
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
