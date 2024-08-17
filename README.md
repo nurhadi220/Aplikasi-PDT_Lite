@@ -23,3 +23,31 @@ Setelah data yang anda inputkan benar maka otomatis akan masuk ke salah 1 dari 2
 
 >Note : Pastikan bahwa anda membuat data pick/confirm dengan default (bawaan) 0 
 
+## Cara Penggunaan
+
+### 1. Masuk pada folder `APP` lalu cari folder `XML` dan buka File ``network_securityconfig.xml``
+pada bagian `domain` anda dapat mengubah IP dengan IP yang anda miliki.
+``` sh
+<domain includeSubdomains="true">192.168.0.175</domain>
+```
+<br>
+
+### 2. Masuk pada folder `java` lalu masuk lagi ke folder `com.example.unitedtractor` dan terakhir masuk folder `api` ubah IP pada file `ApiClient`.
+Tugas anda cukup mengubah IP dan PORT yang sesuai dengan anda miliki.
+``` sh
+object ApiClient {
+
+    private const val BASE_URL = "http://192.168.0.175:5000/warehouse-api/api/v1/"
+
+    private val retrofit: Retrofit by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+```
+<br>
+
+### 3. Seharusnya dengan begini anda dapat mencoba aplikasi ini.
+
+# Terima kasih 
