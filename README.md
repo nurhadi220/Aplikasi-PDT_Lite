@@ -4,7 +4,7 @@
 Aplikasi ini pada dasarnya di ciptakan untuk mencari kode dari suatu barang.
 
 * aplikasi ini akan terus di kembangkan.
-* nantinya aplikasi ini dapat melakukan scanning pada barang dan akan mendapatkan kode dari barang tersebut.
+* nantinya aplikasi ini dapat membantu user dalam mendapatkan kode dari barang tersebut.
 * maka ijinkan saya untuk memperlihatkan tampilan depan dari aplikasinya
 
 ![Desain tanpa judul (1)](https://github.com/user-attachments/assets/dd050de8-c710-44f7-8a1a-8db4441313e2)
