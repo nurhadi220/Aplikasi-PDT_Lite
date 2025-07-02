@@ -92,6 +92,9 @@ class MainActivity : AppCompatActivity() {
 
         // Temukan Button di dalam layout dan tambahkan action
         dialogView.findViewById<Button>(R.id.oke).setOnClickListener {
+
+            findViewById<EditText>(R.id.toFieldInput).text.clear()
+
             // Tutup dialog saat tombol OKE ditekan
             alertDialog.dismiss()
         }
